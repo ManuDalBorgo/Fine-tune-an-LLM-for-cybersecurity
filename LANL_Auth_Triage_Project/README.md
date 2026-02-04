@@ -26,9 +26,27 @@ The goal is to simulate a "Triage AI" that filters millions of raw logs into a p
   - Ranks incidents by final risk score.
   - Evaluates performance using **Precision@K** to measure SOC efficiency.
 
+## 📂 Data Setup (Important)
+
+**Note:** The raw data files are **not** included in this repository due to their size (>3GB).
+
+### Automatic Download
+The easiest way to get the data is to run the included script, which attempts to fetch from the LANL mirrors:
+```bash
+./download_real_data.sh
+```
+
+### Manual Download
+If the script fails (link expiry), download the following files manually from the [LANL Cyber1 Data Source](https://csr.lanl.gov/data/cyber1/):
+1.  `auth.txt.gz` (Authentication Logs)
+2.  `proc.txt.gz` (Process Logs)
+3.  `flows.txt.gz` (Flow Logs)
+
+**Place these files directly into the `LANL_Auth_Triage_Project/` folder.**
+
 ## 🚀 Usage
 
-1.  **Download Data**: Run `download_real_data.sh` to fetch the LANL dataset.
+1.  **Download Data**: (See above).
 2.  **Run Pipeline**: Execute the scripts in order:
     ```bash
     python 01_data_ingestion_preprocessing.py
