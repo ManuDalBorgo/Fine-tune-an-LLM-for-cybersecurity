@@ -4,3 +4,6 @@ __pycache__/
 .ipynb_checkpoints/
 *.pyc
 lora_finetuned_model/
+*.gz
+*.zip
+LANL_Auth_Triage_Project/*.txt
